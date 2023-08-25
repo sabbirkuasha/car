@@ -21,6 +21,7 @@ export function Ground() {
     <mesh rotation-x={-Math.PI * 0.5} castShadow receiveShadow>
       <planeGeometry args={[30, 30]} />
       <MeshReflectorMaterial
+        // emissive={[0.5, 0.5, 0.5]}
         normalMap={normal}
         normalScale={[0.15, 0.15]}
         roughnessMap={roughness}
