@@ -8,6 +8,7 @@ import {
   PerspectiveCamera,
 } from "@react-three/drei";
 import { Ground } from "@/Components/Ground";
+import { Car } from "@/Components/Car";
 
 function CarShow() {
   return (
@@ -16,6 +17,9 @@ function CarShow() {
       <PerspectiveCamera makeDefault fov={50} position={[3, 2, 5]} />
 
       <color args={[0, 0, 0]} attach="background" />
+
+      <Car />
+
       <spotLight
         color={[1, 0.25, 0.7]}
         intensity={50}
@@ -40,10 +44,10 @@ function CarShow() {
         <planeGeometry args={[30, 30]} />
         <MeshReflectorMaterial />
       </mesh> */}
-      <mesh castShadow receiveShadow>
+      {/* <mesh castShadow receiveShadow>
         <boxGeometry args={[1, 1, 1]} />
         <meshBasicMaterial color={"gray"} />
-      </mesh>
+      </mesh> */}
     </>
   );
 }
