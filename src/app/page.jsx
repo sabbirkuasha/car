@@ -3,6 +3,8 @@ import React, { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 
 import {
+  CubeCamera,
+  Environment,
   MeshReflectorMaterial,
   OrbitControls,
   PerspectiveCamera,
@@ -19,7 +21,15 @@ function CarShow() {
 
       <color args={[0, 0, 0]} attach="background" />
 
-      <Car />
+      <CubeCamera resolution={256} frames={Infinity}>
+        {(texture) => (
+          <>
+            <Car />
+            <Environment map={texture} />
+          </>
+        )}
+      </CubeCamera>
+
       <Rings />
       <spotLight
         color={[1, 0.25, 0.7]}
